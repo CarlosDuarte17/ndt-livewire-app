@@ -11,9 +11,6 @@ parameters:
   paths:
     - app
 
-  stubFiles:
-    - vendor/nuwave/lighthouse/_ide_helper.php
-
   ignoreErrors:
     - '#Method App\\[A-z]+\\Models\\[A-z]+::query\(\) should return App\\[A-z]+\\Builders\\[A-z]+ but returns Illuminate\\Database\\Eloquent\\Builder<Illuminate\\Database\\Eloquent\\Model>\.#'
     - '#Method App\\[A-z]+\\Models\\[A-z]+::query\(\) should return App\\[A-z]+\\Builders\\[A-z]+<App\\[A-z]+\\Models\\[A-z]+> but returns Illuminate\\Database\\Eloquent\\Builder<Illuminate\\Database\\Eloquent\\Model>\.#'

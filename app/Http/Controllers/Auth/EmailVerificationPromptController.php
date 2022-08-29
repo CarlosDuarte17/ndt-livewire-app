@@ -16,7 +16,7 @@ class EmailVerificationPromptController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return $request->user()->hasVerifiedEmail()
+        return $request->user()->hasVerifiedEmail() // @phpstan-ignore-line
                     ? redirect()->intended(RouteServiceProvider::HOME)
                     : view('auth.verify-email');
     }

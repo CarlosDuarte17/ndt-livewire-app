@@ -1,0 +1,18 @@
+includes:
+  - vendor/bensampo/laravel-enum/extension.neon
+  - vendor/nesbot/carbon/extension.neon
+  - vendor/nunomaduro/larastan/extension.neon
+
+parameters:
+  checkMissingIterableValueType: false
+  checkModelProperties: true
+  level: 9
+
+  paths:
+    - app
+
+  ignoreErrors:
+    - '#Method App\\[A-z]+\\Models\\[A-z]+::query\(\) should return App\\[A-z]+\\Builders\\[A-z]+ but returns Illuminate\\Database\\Eloquent\\Builder<Illuminate\\Database\\Eloquent\\Model>\.#'
+    - '#Method App\\[A-z]+\\Models\\[A-z]+::query\(\) should return App\\[A-z]+\\Builders\\[A-z]+<App\\[A-z]+\\Models\\[A-z]+> but returns Illuminate\\Database\\Eloquent\\Builder<Illuminate\\Database\\Eloquent\\Model>\.#'
+
+  reportUnmatchedIgnoredErrors: false

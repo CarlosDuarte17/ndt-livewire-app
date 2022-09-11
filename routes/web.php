@@ -17,8 +17,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::prefix('dashboard')
+    ->middleware(['auth'])
+    ->group(function () {
+        Route::get('/', fn () => view('admin.index'));
+        Route::get('users', fn () => view('admin.users.index'));
+        Route::get('campaigns', fn () => view('admin.campaigns.index'));
+        Route::get('chat', fn () => view('admin.chat.index'));
+        Route::get('profile', fn () => view('admin.profile.index'));
+    });
 
 require __DIR__.'/auth.php';

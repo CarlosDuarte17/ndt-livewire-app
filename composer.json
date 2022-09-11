@@ -10,11 +10,15 @@
     "require": {
         "php": "^8.0.2",
         "bensampo/laravel-enum": "^6.0",
+        "cviebrock/eloquent-sluggable": "^9.0",
         "guzzlehttp/guzzle": "^7.2",
+        "hidehalo/nanoid-php": "^1.1",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
-        "spatie/laravel-medialibrary": "^9.0.0"
+        "league/uri": "^6.7",
+        "spatie/laravel-medialibrary": "^9.0.0",
+        "ueberdosis/tiptap-php": "^1.1"
     },
     "require-dev": {
         "brianium/paratest": "^6.6",

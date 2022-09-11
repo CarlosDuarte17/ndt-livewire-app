@@ -20,7 +20,7 @@ class UserFactory extends Factory
             'email' => fake()->safeEmail(),
             'email_verified_at' => now(),
             'password' => bcrypt('password'),
-            'position' => array_rand(['Developer', 'Assistant', 'QA', 'Business Manager']),
+            'position' => fake()->randomElement(['Developer', 'Assistant', 'QA', 'Business Manager']),
             'rol' => UserRol::getRandomValue(),
             'status' => UserStatus::ACTIVE,
             'telephone' => fake()->numerify('########'),

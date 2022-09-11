@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Enums\UserStatus;
+use App\Traits\HasProfilePhoto;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -17,6 +18,7 @@ class User extends Authenticatable implements HasMedia
     use HasApiTokens;
     use InteractsWithMedia;
     use HasFactory;
+    use HasProfilePhoto;
     use Notifiable;
 
     public const MEDIA_COLLECTION_PICTURE = 'picture';

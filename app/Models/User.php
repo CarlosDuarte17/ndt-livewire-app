@@ -28,7 +28,7 @@ class User extends Authenticatable implements HasMedia
         'position',
         'rol',
         'telephone',
-        'status'
+        'status',
     ];
 
     protected $hidden = [

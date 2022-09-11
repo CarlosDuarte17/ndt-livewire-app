@@ -28,7 +28,7 @@ class Campaign extends Model implements HasMedia
 
     protected $casts = [
         'meta_tags' => 'array',
-        'status' => CampaignStatus::class
+        'status' => CampaignStatus::class,
     ];
 
     public function registerMediaCollections(): void
@@ -42,8 +42,8 @@ class Campaign extends Model implements HasMedia
     {
         return [
             'handle' => [
-                'source' => 'title'
-            ]
+                'source' => 'title',
+            ],
         ];
     }
 

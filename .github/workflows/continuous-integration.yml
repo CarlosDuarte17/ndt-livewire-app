@@ -44,10 +44,8 @@ jobs:
       - name: Run composer unused
         run: |
           php composer-unused.phar --no-progress \
-            --excludePackage=bensampo/laravel-enum \
             --excludePackage=guzzlehttp/guzzle \
             --excludePackage=laravel/tinker \
-            --excludePackage=spatie/laravel-medialibrary \
 
   static-code-analysis:
     name: Static code analysis

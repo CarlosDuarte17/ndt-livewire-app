@@ -7,6 +7,8 @@ namespace App\Enums;
 use BenSampo\Enum\Enum;
 
 /**
+ * @extends Enum<string>
+ *
  * @method static static ADMIN()
  * @method static static CLIENT()
  * @method static static MANAGER()

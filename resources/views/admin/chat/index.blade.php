@@ -86,7 +86,7 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
               </button>
-              <button type="button" class="inline-flex items-center justify-center rounded-lg px-4 py-3 transition duration-500 ease-in-out text-white bg-blue-500 hover:bg-blue-400 focus:outline-none">
+              <button type="submit" class="inline-flex items-center justify-center rounded-lg px-4 py-3 transition duration-500 ease-in-out text-white bg-blue-500 hover:bg-blue-400 focus:outline-none">
                 <span class="font-bold">Send</span>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 ml-2 transform rotate-90">
                   <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"></path>
@@ -99,32 +99,12 @@
     </section>
   </main>
 
-  <style>
-    .scrollbar-w-2::-webkit-scrollbar {
-      width: 0.25rem;
-      height: 0.25rem;
-    }
+  @push('styles')
+    @vite('resources/css/message.css')
+  @endpush
 
-    .scrollbar-track-blue-lighter::-webkit-scrollbar-track {
-      --bg-opacity: 1;
-      background-color: #f7fafc;
-      background-color: rgba(247, 250, 252, var(--bg-opacity));
-    }
-
-    .scrollbar-thumb-blue::-webkit-scrollbar-thumb {
-      --bg-opacity: 1;
-      background-color: #edf2f7;
-      background-color: rgba(237, 242, 247, var(--bg-opacity));
-    }
-
-    .scrollbar-thumb-rounded::-webkit-scrollbar-thumb {
-      border-radius: 0.25rem;
-    }
-  </style>
-
-  <script>
-    const el = document.getElementById('messages')
-    el.scrollTop = el.scrollHeight
-  </script>
+  @push('body_scripts')
+    @vite('resources/js/message.js')
+  @endpush
 
 </x-app-layout>

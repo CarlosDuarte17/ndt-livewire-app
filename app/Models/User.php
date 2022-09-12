@@ -5,6 +5,7 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Enums\UserStatus;
 use App\Traits\HasProfilePhoto;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -48,6 +49,14 @@ class User extends Authenticatable implements HasMedia
         $this->addMediaCollection(self::MEDIA_COLLECTION_PICTURE)
             ->useFallbackUrl($this->profile_photo_url)
             ->singleFile();
+    }
+
+    /**
+     * @return Attribute<string, string>
+     */
+    public function picture(): Attribute
+    {
+        return Attribute::get(fn () => $this->getFirstMediaUrl(self::MEDIA_COLLECTION_PICTURE));
     }
 
     /**

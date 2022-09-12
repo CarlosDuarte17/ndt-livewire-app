@@ -57,4 +57,13 @@ class User extends Authenticatable implements HasMedia
     {
         return $this->hasMany(Campaign::class, 'created_by');
     }
+
+    /**
+     * @return HasMany<Chat>
+     */
+    public function chats(): HasMany
+    {
+        return $this->hasMany(Chat::class, 'sender_id')
+            ->orWhere('chats.receiver_id', $this->getKey());
+    }
 }

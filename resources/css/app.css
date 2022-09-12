@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.inactive {
+    @apply bg-red-100 text-red-800;
+}
+
+.active {
+    @apply bg-blue-100 text-blue-900;
+}
+
+.link-active {
+    @apply text-pink-500;
+}

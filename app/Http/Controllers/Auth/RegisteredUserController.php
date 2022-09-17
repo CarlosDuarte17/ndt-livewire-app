@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Enums\UserRol;
+use App\Enums\UserRole;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
@@ -42,7 +42,7 @@ class RegisteredUserController extends Controller
         ]);
 
         $data['password'] = bcrypt($data['password']);
-        $data['rol'] = UserRol::CLIENT;
+        $data['role'] = UserRole::CLIENT;
 
         $user = User::query()->create($data);
 

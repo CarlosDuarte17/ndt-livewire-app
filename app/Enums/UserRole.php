@@ -13,7 +13,7 @@ use BenSampo\Enum\Enum;
  * @method static static CLIENT()
  * @method static static MANAGER()
  */
-final class UserRol extends Enum
+final class UserRole extends Enum
 {
     public const ADMIN = 'admin';
 

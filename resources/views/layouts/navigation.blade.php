@@ -81,35 +81,28 @@
 
       <ul class="md:flex-col md:min-w-full flex flex-col list-none">
         <li class="items-center">
-          <a href="#" class="text-xs uppercase py-3 font-bold block text-pink-500 hover:text-pink-600">
+          <a href="#" @class(["text-xs uppercase py-3 font-bold block hover:text-pink-600", 'link-active' => request()->routeIs('dashboard')])>
             <i class="fas fa-tv mr-2 text-sm opacity-75"></i>
             Dashboard
           </a>
         </li>
 
         <li class="items-center">
-          <a href="#" class="text-xs uppercase py-3 font-bold block text-slate-700 hover:text-slate-500">
-            <i class="fas fa-tools mr-2 text-sm text-slate-300"></i>
-            Appointments
-          </a>
-        </li>
-
-        <li class="items-center">
-          <a href="#" class="text-xs uppercase py-3 font-bold block text-slate-700 hover:text-slate-500">
+          <a href="#" @class(["text-xs uppercase py-3 font-bold block text-slate-700 hover:text-pink-600", 'link-active' => request()->routeIs('users')])>
             <i class="fas fa-users mr-2 text-sm text-slate-300"></i>
             Users
           </a>
         </li>
 
         <li class="items-center">
-          <a href="#" class="text-xs uppercase py-3 font-bold block text-slate-700 hover:text-slate-500">
+          <a href="#" class="text-xs uppercase py-3 font-bold block text-slate-700 hover:text-pink-600">
             <i class="fas fa-comments mr-2 text-sm text-slate-300"></i>
             Messages
           </a>
         </li>
 
         <li class="items-center">
-          <a href="#" class="text-xs uppercase py-3 font-bold block text-slate-700 hover:text-slate-500">
+          <a href="#" class="text-xs uppercase py-3 font-bold block text-slate-700 hover:text-pink-600">
             <i class="fas fa-signs-post mr-2 text-sm text-slate-300"></i>
             Campaigns
           </a>
@@ -126,24 +119,27 @@
 
       <ul class="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
         <li class="items-center">
-          <a href="#" class="text-slate-700 hover:text-slate-500 text-xs uppercase py-3 font-bold block">
+          <a href="#" class="text-slate-700 hover:text-pink-600 text-xs uppercase py-3 font-bold block">
             <i class="fas fa-user text-slate-300 mr-2 text-sm"></i>
             Profile
           </a>
         </li>
 
         <li class="items-center">
-          <a href="#" class="text-slate-700 hover:text-slate-500 text-xs uppercase py-3 font-bold block">
+          <a href="#" class="text-slate-700 hover:text-pink-600 text-xs uppercase py-3 font-bold block">
             <i class="fas fa-tools text-slate-300 mr-2 text-sm"></i>
             Settings
           </a>
         </li>
 
         <li class="items-center">
-          <a href="#" class="text-slate-700 hover:text-slate-500 text-xs uppercase py-3 font-bold block">
-            <i class="fas fa-user-circle text-slate-300 mr-2 text-sm"></i>
-            Logout
-          </a>
+          <form action="{{ action([App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'destroy']) }}" method="post">
+            @csrf
+            <button class="text-slate-700 hover:text-pink-600 text-xs uppercase py-3 font-bold block" type="submit">
+              <i class="fas fa-user-circle text-slate-300 mr-2 text-sm"></i>
+              Logout
+            </button>
+          </form>
         </li>
       </ul>
     </div>

@@ -26,11 +26,10 @@
   <meta name="theme-color" content="#000000" />
   <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
   <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('apple-touch-icon.png') }}" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
 
   <title>Dashboard</title>
-
+  @stack('styles')
   @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
@@ -44,9 +43,8 @@
       {{ $slot }}
     </div>
   </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" charset="utf-8"></script>
-  <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
 
+  @stack('body_scripts')
   @vite('resources/js/dashboard.js')
 </body>
 

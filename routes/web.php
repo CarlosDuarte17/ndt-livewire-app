@@ -20,8 +20,8 @@ Route::get('/', function () {
 Route::prefix('dashboard')
     ->middleware(['auth'])
     ->group(function () {
-        Route::get('/', fn () => view('admin.index'));
-        Route::get('users', fn () => view('admin.users.index'));
+        Route::get('/', fn () => view('admin.index'))->name('dashboard');
+        Route::get('users', fn () => view('admin.users.index'))->name('users');
         Route::get('campaigns', fn () => view('admin.campaigns.index'));
         Route::get('chat', fn () => view('admin.chat.index'));
         Route::get('profile', fn () => view('admin.profile.index'));

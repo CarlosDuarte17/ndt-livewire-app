@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Enums\UserRol;
+use App\Enums\UserRole;
 use App\Enums\UserStatus;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -21,8 +21,8 @@ class UserFactory extends Factory
             'email_verified_at' => now(),
             'password' => bcrypt('password'),
             'position' => fake()->randomElement(['Developer', 'Assistant', 'QA', 'Business Manager']),
-            'rol' => UserRol::getRandomValue(),
-            'status' => UserStatus::ACTIVE,
+            'role' => UserRole::getRandomValue(),
+            'status' => UserStatus::getRandomValue(),
             'telephone' => fake()->numerify('########'),
             'remember_token' => Str::random(10),
         ];
